@@ -3,7 +3,7 @@ pipeline {
         label 'AGENT-1'
     }
      options {
-        timeout(time: 1, unit: 'HOURS') 
+        timeout(time: 30, unit: 'MINUTES') 
     }
     stages {
         stage('Build') {
@@ -14,6 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                  sh 'echo This is test' 
+                 sh 'sleep 10' 
             }
         }
         stage('Deploy') {
